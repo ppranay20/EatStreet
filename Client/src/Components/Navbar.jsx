@@ -1,10 +1,8 @@
 import React, { useContext, useRef } from 'react'
 import { assets } from '../assets/frontend_assets/assets'
 import { Link } from 'react-scroll'
-import FoodDisplay from './FoodDisplay'
 import { Route, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../context/StoreContext'
-import mainlogo from '../assets/frontend_assets/mainlogo.png'
 import '../App.css'
 
 const Navbar = ({setShowLogin}) => {
@@ -19,7 +17,7 @@ const Navbar = ({setShowLogin}) => {
 
   return (
     <div className='flex justify-between items-center px-10 py-7 w-[1500px] m-auto' id='home'>
-        <img src={mainlogo} alt="" onClick={()=>navigate("/")} className='cursor-pointer w-[60px]' />
+        <img src={assets.mainlogo} alt="" onClick={()=>navigate("/")} className='cursor-pointer w-[60px]' />
         <div>
             <ul className='flex gap-8 text-[20px]'>
                 <li className='hover:underline py-2 cursor-pointer' onClick={()=>navigate("/")}>Home</li>
