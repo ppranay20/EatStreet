@@ -8,6 +8,7 @@ import List from './pages/List'
 import Order from './pages/Order'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from './pages/Home'
 
 const App = () => {
   return (
@@ -15,10 +16,11 @@ const App = () => {
       <ToastContainer />
       <Navbar></Navbar>
       <hr className='border-gray-950' />
-      <div className='w-[1600px] m-auto flex h-[100vh]'>
+      <div className='w-[1200px] m-auto flex h-[100vh]'>
         <Sidebar></Sidebar>
         <div>
           <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
             <Route path='/add' element={<Add></Add>}></Route>
             <Route path='/list' element={<List></List>}></Route>
             <Route path='/order' element={<Order></Order>}></Route>
