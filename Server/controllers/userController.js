@@ -2,7 +2,6 @@ const zod = require('zod');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/userModel');
-require('dotenv').config()
 
 const signupSchema  = zod.object({
     username : zod.string(),

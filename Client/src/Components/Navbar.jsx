@@ -16,21 +16,21 @@ const Navbar = ({setShowLogin}) => {
   }
 
   return (
-    <div className='flex justify-between items-center px-10 py-7 w-[1500px] m-auto' id='home'>
+    <div className='flex justify-between items-center px-10 py-5 w-[1170px] m-auto' id='home'>
         <img src={assets.mainlogo} alt="" onClick={()=>navigate("/")} className='cursor-pointer w-[60px]' />
         <div>
-            <ul className='flex gap-8 text-[20px]'>
+            <ul className='flex gap-8 text-[17px]'>
                 <li className='hover:underline py-2 cursor-pointer' onClick={()=>navigate("/")}>Home</li>
                 <Link to='menu' duration={500} smooth={true} className='hover:underline py-2 cursor-pointer'>Menu</Link>
                 <Link to='about' duration={1500} smooth={true} className='hover:underline py-2 cursor-pointer'>Contact Us</Link>
             </ul>
         </div>
-        <div className='flex gap-10 mr-10'>
-            <img src={assets.basket_icon} alt="" onClick={()=>navigate("/cart")} className='cursor-pointer relative' />
+        <div className='flex gap-10 '>
+            <img src={assets.basket_icon} alt="" onClick={()=>navigate("/cart")} className='cursor-pointer relative h-8 mt-1' />
             {
               !isLoggedIn 
               ? 
-                <button className='border border-gray-600 text-xl rounded-3xl px-3 py-2' onClick={() => setShowLogin(true)}>Sign In</button>
+                <button className='border border-gray-600 text-lg rounded-3xl px-3 py-2' onClick={() => setShowLogin(true)}>Sign In</button>
               : 
                 <div className='nav-profile'>
                   <img src={assets.profile_icon} />

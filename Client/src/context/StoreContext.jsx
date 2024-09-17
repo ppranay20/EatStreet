@@ -10,13 +10,17 @@ const StoreContextProvider = (props) => {
     const [isValidPromocode,setIsValidPromocode] = useState(false);
 
     const getCartData = async (token) => {
-        const res = await axios.post("http://localhost:3000/api/cart/get",{},{
-            headers : {
-                Authorization : token
-            }
-        })
+        try{
+            const res = await axios.post("http://localhost:3000/api/cart/get",{},{
+                headers : {
+                    Authorization : token
+                }
+            })
+            setCartItems(res.data.cartData);
+        }catch(err){
+            console.log(err);
+        }
 
-        setCartItems(res.data.cartData);
     }
 
     const fetchFoodList = async () => {

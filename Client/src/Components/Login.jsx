@@ -83,27 +83,27 @@ const Login = ({setShowLogin}) => {
     <div className='z-20 absolute w-full h-full bg-[#00000090] flex justify-center items-center'>
         <form className='bg-white rounded-lg px-[25px] py-[30px] flex flex-col gap-4 animate-fadeInLogin' onSubmit={currState==='Login' ? fetchForLogin : fetchForSignup}>
             <div className='flex items-center justify-between'>
-                <h2 className='text-2xl font-extrabold font-mono'>{currState}</h2>
-                <img src={assets.cross_icon} onClick={() => {setShowLogin(false)}} className='cursor-pointer w-5' />
+                <h2 className='text-xl font-extrabold font-mono'>{currState}</h2>
+                <img src={assets.cross_icon} onClick={() => {setShowLogin(false)}} className='cursor-pointer w-4' />
             </div>
             <div className='flex flex-col gap-6 py-4'>
                 {
                     currState === "Sign-up" ?
-                    <input onChange={onChangeHandler} name='username' className='border border-gray-400 py-3 text-lg px-1 rounded-md' type="text" placeholder='Enter your username' required /> :
+                    <input onChange={onChangeHandler} name='username' className='border border-gray-400 py-2 text-[16px] px-1 rounded-md' type="text" placeholder='Enter your username' required /> :
                     <></>
                 }
-                <input type="email" onChange={onChangeHandler} name='email' placeholder='Enter your email' required className='border border-gray-400 py-3 text-lg px-1 rounded-md' />
-                <input type="password" onChange={onChangeHandler} name='password' placeholder='Enter your password' required className='border border-gray-400 py-3 text-lg px-1 rounded-md' />
+                <input type="email" onChange={onChangeHandler} name='email' placeholder='Enter your email' required className='border border-gray-400 py-2 text-[16px] px-1 rounded-md' />
+                <input type="password" onChange={onChangeHandler} name='password' placeholder='Enter your password' required className='border border-gray-400 py-2 text-[16px] px-1 rounded-md' />
             </div>
-            <button type='submit' className='text-white border bg-[tomato] font-sans py-4 rounded-lg font-semibold text-lg'>{currState === 'Sign-up' ? "Create Account" : "Login"}</button>
+            <button type='submit' className='text-white border bg-[tomato] font-sans py-3 rounded-lg font-semibold text-sm'>{currState === 'Sign-up' ? "Create Account" : "Login"}</button>
             <div className='flex gap-3 items-baseline py-2'>
                 <input type="checkbox" size={10} required />
-                <p className='text-md text-gray-500 '>By continuing , I agree to the terms of use and the<br></br> privacy policy.</p>
+                <p className='text-sm text-gray-500 '>By continuing , I agree to the terms of use and the<br></br> privacy policy.</p>
             </div>
             {
                 currState === "Sign-up" ?
-                    <p className='text-gray-500 text-lg'>Already have an account? <span className='cursor-pointer text-[tomato] text-lg' onClick={()=>setCurrState("Login")}>Login here</span></p> :
-                    <p className='text-gray-500 text-lg'>Create new account? <span className='cursor-pointer text-[tomato] text-lg' onClick={()=>setCurrState("Sign-up")}>Click here</span></p>                
+                    <p className='text-gray-500 text-sm'>Already have an account? <span className='cursor-pointer text-[tomato] text-lg' onClick={()=>setCurrState("Login")}>Login here</span></p> :
+                    <p className='text-gray-500 text-sm'>Create new account? <span className='cursor-pointer text-[tomato] text-lg' onClick={()=>setCurrState("Sign-up")}>Click here</span></p>                
             }
         </form>
     </div>

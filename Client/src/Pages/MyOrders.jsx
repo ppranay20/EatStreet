@@ -28,7 +28,7 @@ const MyOrders = () => {
     },[token]);
 
   return (
-    <div className='w-[1400px] m-auto'>
+    <div className='w-[1100px] m-auto'>
         <h1 className='text-3xl font-bold'>My Orders</h1>
         <div className='mb-20 mt-12'>
             {
