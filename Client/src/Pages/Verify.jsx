@@ -11,7 +11,7 @@ const Verify = () => {
 
     const verifyPayment =async () =>{
     try {
-      const res = await axios.post("http://localhost:3000/api/order/verify",{success,orderId})
+      const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/order/verify",{success,orderId})
       if(res.data.success === true){
         navigate("/myorders")
         setTimeout(() => {

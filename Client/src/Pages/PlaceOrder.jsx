@@ -2,6 +2,7 @@ import React, { useContext,useEffect,useState } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
   const token = localStorage.getItem("token");
@@ -30,35 +31,10 @@ const PlaceOrder = () => {
   const submitHandler = async (e) =>{
     e.preventDefault();
     const token = localStorage.getItem('token');
-    let orderItems = [];
-
-    foodList.map((item) =>{
-      if(cartItems[item._id] > 0){
-        let itemInfo = item;
-        itemInfo["quantity"] = cartItems[item._id];
-        orderItems.push(itemInfo)
-      }
+    toast.success("order placed successfully",{
+      position : 'top-right'
     })
-
-    const order_data = {
-      items : orderItems,
-      amount : getTotalAmount()+2,
-      address : data,
-      promocode : isValidPromocode
-    }
-
-
-    const res = await axios.post("http://localhost:3000/api/order/place",order_data,{headers : {
-      Authorization : token
-    }})
-
-    if(res.data.success){
-      const {sessionUrl} = res.data;
-      window.location.replace(sessionUrl)
-    }
-    else{
-      alert("Error");
-    }
+    navigate("/myorders")
   }
 
   useEffect(()=>{
@@ -124,7 +100,7 @@ const PlaceOrder = () => {
               <p>${getTotalAmount() + (getTotalAmount() > 0 ? 2 : 0) - (isValidPromocode ? 1 : 0)}</p>
             </div>
             <hr className='py-2' />
-            <button type='submit' className='bg-[tomato] text-white py-3 px-2 mt-4 rounded-md text-md cursor-pointer'>Proceed To Payment</button>
+            <button type='submit' className='bg-[tomato] text-white py-3 px-2 mt-4 rounded-md text-md cursor-pointer'>Place Order</button>
           </div>
         </div>
       </form>

@@ -6,7 +6,7 @@ const verifyUser = async (req,res,next) => {
     const token = req.headers.authorization.split(' ')[1];
     try{
         if(!token){
-            res.json({
+            return res.json({
                 success : "false",
                 message : "token not sent"
             })

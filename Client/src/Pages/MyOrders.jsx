@@ -7,7 +7,7 @@ const MyOrders = () => {
     const token = localStorage.getItem("token")
 
     const fetchData =async (token) => {
-        const res = await axios.post("http://localhost:3000/api/order/myorder",{},{
+        const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/order/myorder",{},{
             headers : {
                 Authorization : token
             }

@@ -7,7 +7,7 @@ const FoodItem = ({food}) => {
 
   return (
     <div className='shadow-lg rounded-lg relative'>
-        <img src={`http://localhost:3000/images/${food.image}`} className='rounded-t-lg' />
+        <img src={`https://eat-street-backend-gg2j.onrender.com/images/${food.image}`} className='rounded-t-lg' />
          {
             !cartItems[food._id]
                 ? <img src={assets.add_icon_white} onClick={() => addToCart(food._id)} className='absolute top-36 right-2 cursor-pointer' />

@@ -24,7 +24,7 @@ const Login = ({setShowLogin}) => {
     const fetchForLogin = async (e) => {
         e.preventDefault();
         try{
-            const res = await axios.post("http://localhost:3000/api/user/login",{
+            const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/user/login",{
                 email : data.email,
                 password : data.password
             })
@@ -52,7 +52,7 @@ const Login = ({setShowLogin}) => {
         e.preventDefault();
         try{
 
-            const res = await axios.post("http://localhost:3000/api/user/signup",{
+            const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/user/signup",{
                 username : data.username,
                 email : data.email,
                 password : data.password    

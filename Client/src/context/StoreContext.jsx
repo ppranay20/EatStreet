@@ -11,7 +11,7 @@ const StoreContextProvider = (props) => {
 
     const getCartData = async (token) => {
         try{
-            const res = await axios.post("http://localhost:3000/api/cart/get",{},{
+            const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/cart/get",{},{
                 headers : {
                     Authorization : token
                 }
@@ -25,7 +25,7 @@ const StoreContextProvider = (props) => {
 
     const fetchFoodList = async () => {
         try{
-            const res = await axios.get("http://localhost:3000/api/food/list")
+            const res = await axios.get("https://eat-street-backend-gg2j.onrender.com/api/food/list")
             if(res.data.success){
                 setFoodList(res.data.food);
             }
@@ -52,7 +52,7 @@ const StoreContextProvider = (props) => {
         }
         const token = localStorage.getItem("token");
         if(token){
-            const res = await axios.post("http://localhost:3000/api/cart/add",
+            const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/cart/add",
                 {itemId},
                 {headers : {
                     Authorization : token
@@ -66,7 +66,7 @@ const StoreContextProvider = (props) => {
         }
         const token = localStorage.getItem("token");
         if(token){
-            const res = await axios.post("http://localhost:3000/api/cart/remove",{itemId},{headers : {Authorization : token}})
+            const res = await axios.post("https://eat-street-backend-gg2j.onrender.com/api/cart/remove",{itemId},{headers : {Authorization : token}})
         }
     }
 
